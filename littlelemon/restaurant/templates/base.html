@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Little Lemon</title>
+    <meta name="description" content="Little lemon restaurant">
+    <meta name="author" content="Based in Chicago, Illinois, Little Lemon is a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.">
+    
+    <link rel="shortcut icon" type="image/png", href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href= "https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text:wght@500&display=swap"
+          rel="stylesheet"
+          async>
+</head>
+<body>
+    {% include 'partials/_header.html' %}
+    <main> {% block content %} {% endblock %} </main>
+    {% include 'partials/_footer.html' %}
+</body>
+</html>

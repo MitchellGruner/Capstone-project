@@ -1,12 +1,44 @@
-<!--add this template tag-->
+{% extends 'base.html' %}
 {% load static %}
-<img src="{% static '/img/littlelemon.png' %}" style="display: block; margin: auto;">
 
-<html>
-   <head>
-      <title>Capstone Project</title>
-   </head>
-   <body>
-      <h1 style="text-align:center;">Welcome To the Little Lemon Restaurant!</h1>
-   </body>
-</html>
+{% block content %}
+<section>
+    <article id="hero">
+        <h1 class="heading">SPECIAL OFFER</h1>
+        <p class="offer">30% off this weekend</p>
+        <a href="{% url 'book' %}" class="cta">Book Now</a>
+    </article>
+</section>
+
+<section class="information-section">
+    <article class="menu">
+        <h2 class="menu-title">Our New Menu</h2>
+        <img src="{% static 'img/grill.jpg' %}" alt="Grilled Food">
+        <p class="menu-description">Our menu consists of 12-15 seasonal items based on Italian, Greek, and Turkish culture.</p>
+        <p>
+            <a href="{% url 'menu' %}" class="see-menu-link">See our new menu</a>
+        </p>
+    </article>
+
+    <article class="booking">
+        <h2 class="booking-title">Book a table</h2>
+        <img src="{% static 'img/salad.jpg' %}" alt="Salad">
+        <p class="booking-description">Reserve your table for an Italian, Greek, and Turkish dining experience.</p>
+        <p>
+            <a href="{% url 'book' %}" class="book-table-link">Book your table now</a>
+        </p>
+    </article>
+
+    <article class="hours">
+        <h2 class="hours-title">Opening Hours</h2>
+        <img src="{% static 'img/head_chef.jpg' %}" alt="Head chef">
+        <p class="hours-description">The Litle Lemon Restaurant is open 7 days a week, except for public holidays.</p>
+
+        <ul class="hours-list">
+            <li>Mon - Fri: 2pm - 10pm</li>
+            <li>Sat: 2pm - 11pm</li>
+            <li>Sun: 2pm - 9pm</li>
+        </ul>
+    </article>
+</section>
+{% endblock %}
